@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Registro</title>
+    <meta charset="UTF-8">
+    <link href="./css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div id="contenedor">
+        <div id="central">
+            <div id="login">
+                <div class="titulo">
+                    Registro
+                </div>
+                <form id="loginform">
+                    Nombre<input type="text" name="usuario" placeholder="Usuario" required> Correo Electronico <input type="email" placeholder="Contraseña" name="password" required> Contraseña <input type="password" id="Password"> Confirmar Contraseña
+                    <input type="password" id="Password2">
+                    <input type="submit" value="Registrar" onclick="Validate()">
+                </form>
+                <div class="inferior">
+                    <a href="./">Volver</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/login.js"></script>
+</body>
+
+</html>

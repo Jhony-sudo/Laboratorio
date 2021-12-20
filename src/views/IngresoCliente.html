@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Registro</title>
+    <meta charset="UTF-8">
+
+    <%- include('partials/head.html');  %>
+
+</head>
+
+<body>
+    <%- include('partials/navigation.html');  %>
+        <br>
+
+        <form method="post" action="/IngresoCliente">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nombre</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Apellidos</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Fecha Nacimiento</label>
+                <input type="date" class="form-control" id="exampleInputPassword1" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Telefono</label>
+                <input type="number" class="form-control" id="exampleInputPassword1" required>
+            </div>
+            <br>
+            <center><input type="submit" class="btn btn-primary" value="Ingresar Paciente">
+            </center>
+        </form>
+
+
+</body>
+
+</html>
