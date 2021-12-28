@@ -1,10 +1,10 @@
 const express = require('express');
+const bodyparser = require('body-parser');
 const path = require('path');
 const app = express();
 
-
-
 //setings
+app.use(bodyparser());
 app.use(express.static('src/public'));
 app.set('port', 3000);
 app.engine('html', require('ejs').renderFile);

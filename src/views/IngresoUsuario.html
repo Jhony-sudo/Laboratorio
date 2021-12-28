@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Usuario</title>
+    <link href="./css/style.css" rel="stylesheet" type="text/css">
+    <%- include('partials/head.html');  %>
+
+</head>
+
+<body>
+    <%- include('partials/navigationadmin.html'); %>
+        <br>
+
+        <div class="card bg-light">
+            <article class="card-body mx-auto" style="max-width: 400px;">
+                <h4 class="card-title mt-3 text-center">Ingreso de Clientes</h4>
+
+
+                <p class="divider-text">
+                    <span class="bg-light">Ingrese los datos</span>
+                </p>
+                <form action="/add" method="post">
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                        </div>
+                        <input name="nombre" class="form-control" placeholder="Nombre" type="text" id="nombre">
+                    </div>
+                    <!-- form-group// -->
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                        </div>
+                        <input name="Email" class="form-control" placeholder="Email" type="email" id="correo">
+                    </div>
+                    <!-- form-group// -->
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+                        </div>
+                        <select class="custom-select" style="max-width: 120px;">
+                    <option selected="">+502</option>
+                </select>
+                        <input name="Telefono" class="form-control" placeholder="Telefono" type="number" id="cel">
+                    </div>
+                    <!-- form-group// -->
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-building"></i> </span>
+                        </div>
+                        <select class="form-control" name="Tipo" id="TipoUsuario">
+                        <option value="Administrador">Administrador</option>
+                        <option value="Secreataria">Secretaria</option>
+                        <option value="Laboratorista">Laboratorista</option>
+                    </select>
+                    </div>
+                    <!-- form-group end.// -->
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                        </div>
+                        <input name="Password" class="form-control" id="contrasena" placeholder="contrasena" type="password">
+                    </div>
+                    <!-- form-group// -->
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                        </div>
+                        <input class="form-control" id="confir" placeholder="Confirmar contraseña" type="password">
+                    </div>
+                    <!-- form-group// -->
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary btn-block" value="Crear Usurio">
+                    </div>
+
+                </form>
+            </article>
+        </div>
+
+        </div>
+</body>
+
+</html>
