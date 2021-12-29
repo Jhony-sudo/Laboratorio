@@ -1,0 +1,94 @@
+<!------ Include the above in your HEAD tag ---------->
+
+<%- include('admin/headerAdmin.html'); %>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-5-center">
+                <main class="my-form-center-card-border">
+                    <div class="card-header">Agragar un nuevo examen</div>
+                    <div class="card-body">
+                        <form name="my-form" action="/saveStudio" method="post">
+
+                            <div class="form-group row">
+                                <label for="user_name" class="col-md-4 col-form-label text-md-right">Nombre
+                                    del
+                                    laboratorio</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="nombre-lab" name="nombreStudio" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="phone_number" id="precios"
+                                    class="col-md-4 col-form-label text-md-right">Precio
+                                    Q.</label>
+                                <div class="col-md-6">
+                                    <input type="number" id="precio" name="precio" class="form-control">
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    Agregar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </main>
+            </div>
+            <div class="col-md-7">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <td>No.</td>
+                            <td>Nombre Estudio</td>
+                            <td>Precio</td>
+                            <td>Opciones</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% if (data) { %>
+                            <% for(var i=0; i < data.length; i++) { %>
+                                <tr>
+                                    <td>
+                                        <%= (i + 1) %>
+                                    </td>
+                                    <td>
+                                        <%= data[i].Nombre %>
+                                    </td>
+                                    <td>
+                                        <%= data[i].Precio %>
+                                    </td>
+                                    <td>
+                                        <a href="/update/<%= data[i].Nombre %>" class="btn btn-info">Edit</a>
+                                        <a href="/delete/<%= data[i].Nombre %>"
+                                            class="btn btn-danger">Delete</a>
+                                    </td>
+                                </tr>
+                                <% } %>
+                                    <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+   <% if (typeof alert != "undefined")  { %>
+    <script>
+    Swal.fire({
+      title:'<%= alertTitle %>',
+      text:'<%= alertMessage %>',
+      icon:'<%= alertIcon %>',
+      showConfirmButton: <%= showConfirmButton %>,
+      timer: <%= timer %>
+    }).then(()=>{
+      window.location='/<%= ruta %>'
+    })
+    </script>
+  <% } %>
+</body>
+
+</html>

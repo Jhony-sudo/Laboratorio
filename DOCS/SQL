@@ -1,3 +1,9 @@
+CREATE USER 'Jhony'@'localhost' IDENTIFIED BY 'Jhony1920.';
+GRANT ALL PRIVILEGES ON *.* TO 'Jhony'@'localhost';
+UPDATE user SET plugin='auth_socket' WHERE User='Jhony';
+CREATE SCHEMA `PRUEBALAB` ;
+
+
 CREATE TABLE Usuario(
 	Codigo INT AUTO_INCREMENT PRIMARY KEY,
 	Nombre VARCHAR(30) NOT NULL,

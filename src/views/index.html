@@ -1,33 +1,36 @@
-<!DOCTYPE= html>
-<html lang="esp">
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<head>
-    <title>Login</title>
-    <meta charset="UTF-8">
-    <link href="/css/style.css" rel="stylesheet">
-</head>
-
-<body>
-
-    <div id="contenedor">
-        <div id="central">
-            <div id="login">
-                <div class="titulo">
-                    Bienvenido
-                </div>
-                <form id="loginform" method="get" action="/menu">
-                    User<input type="text" name="usuario" placeholder="Usuario" id="User" required> Password
-
-                    <input type="password" placeholder="Contraseña" name="password" id="Password" required>
-
-                    <input type="submit" value="Log in">
-                </form>
-
-
-            </div>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <title>Fabrica</title>
+    </head>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">El mejor</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/login" target="miContenedor">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/registro"" target="miContenedor">Registrar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/ingreso" target="miContenedor">Ingresar clientes</a>
+                </li>
+                
+            </ul>
         </div>
-        <script src="/js/login.js">
-        </script>
-</body>
-
+    </nav>
 </html>

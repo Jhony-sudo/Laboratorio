@@ -1,0 +1,125 @@
+<%- include('secretary/headerSecre.html'); %>
+
+    <body>
+        <main class="my-form">
+            <div class="cotainer">
+                <div class="row justify-content-center">
+                    <div class="container mt-5">
+                        <div class="row">
+                            <div class="card">
+                                <div class="card-header">Registrar paciente</div>
+                                <div class="card-body">
+                                    <form name="my-form"  action="/saveCliente" method="post">
+
+                                        <div class="form-group row">
+                                            <label for="user_name"
+                                                class="col-md-4 col-form-label text-md-right" >Nombre</label>
+                                            <div class="col-md-6">
+                                                <input type="text" id="nombre" class="form-control" name="nombre" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="phone_number"
+                                                class="col-md-4 col-form-label text-md-right">CUI</label>
+                                            <div class="col-md-6">
+                                                <input type="number" id="phone_number" class="form-control" name="cui" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="user_name" 
+                                                class="col-md-4 col-form-label text-md-right">Fecha de nacimiento</label>
+                                            <div class="col-md-6">
+                                                <input type="date" id="date" class="form-control" name="date" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label for="phone_number"
+                                                class="col-md-4 col-form-label text-md-right">Numero
+                                                de telefono</label>
+                                            <div class="col-md-6">
+                                                <input type="number" id="phone_number" class="form-control" name="telefono" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"> <i class="fa fa-building"></i> </span>
+                                            </div>
+                                            <select class="form-control" name="sexo" required>
+                                                <option selected=""> Seleccioear sexo</option>
+                                                <option value="F">Femenino</option>
+                                                <option value="M">Masculino</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label for="permanent_address"
+                                                class="col-md-4 col-form-label text-md-right">NIT</label>
+                                            <div class="col-md-6">
+                                                <input type="text" id="permanent_address" class="form-control"
+                                                    name="nit">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 offset-md-4">
+                                            <button type="submit" class="btn btn-primary" >
+                                                Register
+                                            </button>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <table class="table table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <td>No.</td>
+                                            <td>CUI</td>
+                                            <td>Nombre </td>
+                                            <td>Telefono</td>
+                                            <td>Opciones</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% if (data) { %>
+                                            <% for(var i=0; i < data.length; i++) { %>
+                                                <tr>
+                                                    <td>
+                                                        <%= (i + 1) %>
+                                                    </td>
+                                                    <td>
+                                                        <%= data[i].Cui %>
+                                                    </td>
+                                                    <td>
+                                                        <%= data[i].Nombre %>
+                                                    </td>
+                                                    <td>
+                                                        <%= data[i].Telefono %>
+                                                    </td>
+                                                    <td>
+                                                        <a href="/update/<%= data[i].Nombre %>"
+                                                            class="btn btn-info">Edit</a>
+                                                        <a href="/delete/<%= data[i].Nombre %>"
+                                                            class="btn btn-danger">Delete</a>
+                                                    </td>
+                                                </tr>
+                                                <% } %>
+                                                    <% } %>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+        <script src="/proces"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    </body>
+
+    </html>

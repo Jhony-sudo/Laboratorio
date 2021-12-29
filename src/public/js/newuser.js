@@ -1,1 +1,0 @@
-console.log("Entre al metodo jajajaj xdxd");

@@ -1,0 +1,123 @@
+<!------ Include the above in your HEAD tag ---------->
+
+<%- include('admin/headerAdmin.html'); %>
+
+	<body>
+
+
+		<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"
+			id="bootstrap-css">
+
+		<!------ Include the above in your HEAD tag ---------->
+
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+		<div class="container mt-5">
+			<div class="row">
+				<div class="card bg-light">
+					<article class="card-body mx-auto" style="max-width: 400px;">
+						<h4 class="card-title mt-3 text-center">Crear usuario</h4>
+
+
+						<p class="divider-text">
+							<span class="bg-light">Ingrese los datos</span>
+						</p>
+						<form action="/saveUser" method="POST">
+							<div class="form-group input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"> <i class="fa fa-user"></i> </span>
+								</div>
+								<input name="nombre" id="nombre" class="form-control" placeholder="Nombre" type="text" required>
+							</div> <!-- form-group// -->
+							<div class="form-group input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+								</div>
+								<select class="custom-select" style="max-width: 120px;">
+									<option selected="">+502</option>
+								</select>
+								<input name="telefono" class="form-control" placeholder="Telefono" type="number"
+									id="cel" required>
+							</div> <!-- form-group// -->
+							<div class="form-group input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+								</div>
+								<input name="email" class="form-control" placeholder="Email" type="email" id="correo" required>
+							</div> <!-- form-group// -->
+							<div class="form-group input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"> <i class="fa fa-building"></i> </span>
+								</div>
+								<select class="form-control" name="tipo" required>
+									<option selected=""> Seleccioear area de trabajo</option>
+									<option value="1">Administrador</option>
+									<option value="2">Secretaria</option>
+									<option value="3">Laboratorista</option>
+								</select>
+							</div> <!-- form-group end.// -->
+							<div class="form-group input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+								</div>
+								<input class="form-control" name="contrasena" id="contrasena" placeholder="Contraseña"
+									type="password" required>
+							</div> <!-- form-group// -->
+							<div class="form-group input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+								</div>
+								<input class="form-control" id="confir" name="confir" placeholder="Confirmar contraseña"
+									type="password" required>
+							</div> <!-- form-group// -->
+							<div class="form-group">
+								<button type="submit" class="btn btn-primary btn-block"> Crear usuario </button>
+							</div> <!-- form-group// -->
+							<p class="text-center">Have an account? <a href="">Log In</a> </p>
+						</form>
+					</article>
+				</div> <!-- card.// -->
+				<div class="col-md-7">
+					<table class="table table-bordered table-hover">
+						<thead>
+							<tr>
+								<td>No.</td>
+								<td>Nombre User</td>
+								<td>Correo</td>
+								<td>Tipo</td>
+							</tr>
+						</thead>
+						<tbody>
+							<% if (data) { %>
+								<% for(var i=0; i < data.length; i++) { %>
+									<tr>
+										<td>
+											<%= (i + 1) %>
+										</td>
+										<td>
+											<%= data[i].Nombre %>
+										</td>
+										<td>
+											<%= data[i].Email %>
+										</td>
+										<td>
+											<%= data[i].Tipo %>
+										</td>
+										<td>
+											<a href="/update/<%= data[i].Nombre %>" class="btn btn-info">Edit</a>
+											<a href="/delete/<%= data[i].Nombre %>"
+												class="btn btn-danger">Delete</a>
+										</td>
+									</tr>
+									<% } %>
+										<% } %>
+						</tbody>
+					</table>
+				</div>
+			</div>>
+		</div>>
+
+
+		</div>
+	</body>
+
+	<%- include('admin/footer.html'); %>

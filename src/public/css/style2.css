@@ -1,14 +1,13 @@
-body{
-    background-color: aqua;
-}
+	
 
 #container{
-    background-color: blueviolet;
+    
     height: 400px;
 			width: 350px;
+            text-align: center;
 			margin-top: auto;
 			margin-bottom: auto;
-			background-color: cadetblue;
+			background-color: blueviolet;
 			position: relative;
 			display: flex;
 			justify-content: center;
@@ -20,4 +19,3 @@ body{
 			border-radius: 5px;
 
 }
-
